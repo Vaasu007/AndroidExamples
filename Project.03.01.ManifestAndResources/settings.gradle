@@ -1,0 +1,2 @@
+rootProject.name='Project.03.01.ManifestAndResources'
+include ':app'

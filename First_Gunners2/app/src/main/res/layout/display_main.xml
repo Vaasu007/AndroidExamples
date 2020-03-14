@@ -7,13 +7,45 @@
     tools:context="com.ibm.firstg.Display"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listViewd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/wman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="man goes here"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/whorse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="man goes here"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/wgun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="man goes here"
+        android:textColor="#000000"
+        android:textSize="16sp" />
 
+    <TextView
+        android:id="@+id/wammo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="man goes here"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ibm.firstg.Display"
+    android:orientation="horizontal">
     <Button
-        android:id="@+id/gunb"
+        android:id="@+id/dispb"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,5 +61,38 @@
         app:layout_constraintVertical_bias="0.616"
         android:text="Return"
         />
+    <Button
+        android:id="@+id/dispwrite"
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.616"
+        android:text="Save and Return"
+        />
+    <Button
+        android:id="@+id/sendEmailBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.616"
+        android:text="Call to Revoke"
+        />
+    </LinearLayout>
 </LinearLayout>

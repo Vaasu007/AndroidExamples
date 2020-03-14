@@ -9,11 +9,11 @@ import kotlinx.android.synthetic.main.horse_list.*
 
 class Horse  : AppCompatActivity()  {
 
-    val description = arrayOf<String>(
+    private val description = arrayOf<String>(
         "Horse1" , "Horse2 " , " Horse3 " , "Horse4"
     )
 
-    val imageId = arrayOf<Int>(
+    private val imageId = arrayOf<Int>(
         R.drawable.horse, R.drawable.horse1 ,  R.drawable.horse2 , R.drawable.horse3
     )
     private val hList = arrayListOf<String>()
@@ -21,18 +21,26 @@ class Horse  : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.horse_list)
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         val myListAdapter = MyListAdapter(this,description,imageId)
         listViewh.adapter = myListAdapter
 
-        listViewh.setOnItemClickListener(){adapterView, view, position, id ->
+        listViewh.setOnItemClickListener() { adapterView, view, position, id ->
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
             hList.add(itemAtPos.toString())
 //            Log.d("TAG", hList[0])
-            Toast.makeText(this, "Click on item at $itemAtPos its item id $itemIdAtPos", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                "Click on item at $itemAtPos its item id $itemIdAtPos",
+                Toast.LENGTH_LONG
+            ).show()
 
-
+        }
 
 
 //            val bundle: Bundle? = intent.extras
@@ -56,4 +64,3 @@ class Horse  : AppCompatActivity()  {
         }
     }
 
-}

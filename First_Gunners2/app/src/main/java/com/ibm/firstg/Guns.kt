@@ -10,31 +10,41 @@ import kotlinx.android.synthetic.main.guns_list.*
 
 
 
-class Guns  : AppCompatActivity()  {
+class Guns  : AppCompatActivity() {
 
-    val description = arrayOf<String>(
-        "Gun1" , "Gun2 " , " Gun3 " , "Gun4"
+    private val description = arrayOf<String>(
+        "Gun1", "Gun2 ", " Gun3 ", "Gun4"
     )
 
-    val imageId = arrayOf<Int>(
-        R.drawable.gun, R.drawable.smg ,  R.drawable.revolver , R.drawable.gun
+    private val imageId = arrayOf<Int>(
+        R.drawable.gun, R.drawable.smg, R.drawable.revolver, R.drawable.gun
     )
     private val gunsList = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.guns_list)
+    }
 
-        val myListAdapter = MyListAdapter(this,description,imageId)
+    override fun onResume() {
+        super.onResume()
+
+        val myListAdapter = MyListAdapter(this, description, imageId)
         listViewg.adapter = myListAdapter
 
-        listViewg.setOnItemClickListener(){adapterView, view, position, id ->
+        listViewg.setOnItemClickListener() { adapterView, view, position, id ->
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
 
             gunsList.add(itemAtPos.toString())
 
-            Toast.makeText(this, "Click on item at $itemAtPos its item id $itemIdAtPos", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                "Click on item at $itemAtPos its item id $itemIdAtPos",
+                Toast.LENGTH_LONG
+            ).show()
+
+        }
 
 
 
@@ -44,18 +54,18 @@ class Guns  : AppCompatActivity()  {
 //            val language = bundle?.get("language_value")
 //            Toast.makeText(applicationContext,id.toString()+" "+language, Toast.LENGTH_LONG).show()
 
-            gunb.setOnClickListener(){
+    gunb.setOnClickListener()
+    {
 //                intent = Intent(this, MainActivity::class.java)
 //                intent.putExtra("GunSelected", gunsList)
 //                startActivity(intent)
-                val intent = Intent()
-                intent.putExtra("GunSelected", gunsList)
-                setResult(1, intent)
-                finish() //finishin
-            }
-
-
-        }
+        val intent = Intent()
+        intent.putExtra("GunSelected", gunsList)
+        setResult(1, intent)
+        finish()
     }
 
 }
+}
+
+

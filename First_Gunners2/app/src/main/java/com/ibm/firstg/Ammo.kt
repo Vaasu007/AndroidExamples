@@ -12,11 +12,11 @@ import kotlinx.android.synthetic.main.ammo_list.*
 
 class Ammo  : AppCompatActivity()  {
 
-    val description = arrayOf<String>(
+    private val description = arrayOf<String>(
         "Ammo1" , "Ammo2 " , " Ammo3 " , "Ammo4"
     )
 
-    val imageId = arrayOf<Int>(
+    private val imageId = arrayOf<Int>(
         R.drawable.ammo, R.drawable.ammo ,  R.drawable.ammo , R.drawable.ammo
     )
     private val ammoList = arrayListOf<String>()
@@ -24,19 +24,28 @@ class Ammo  : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ammo_list)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
 
         val myListAdapter = MyListAdapter(this,description,imageId)
         listViewa.adapter = myListAdapter
 
-        listViewa.setOnItemClickListener(){adapterView, view, position, id ->
+        listViewa.setOnItemClickListener() { adapterView, view, position, id ->
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
 
             ammoList.add(itemAtPos.toString())
 
-            Toast.makeText(this, "Click on item at $itemAtPos its item id $itemIdAtPos", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                "Click on item at $itemAtPos its item id $itemIdAtPos",
+                Toast.LENGTH_LONG
+            ).show()
 
-
+        }
 
 //            val bundle: Bundle? = intent.extras
 //            val id = bundle?.get("id_value")
@@ -59,4 +68,3 @@ class Ammo  : AppCompatActivity()  {
         }
     }
 
-}

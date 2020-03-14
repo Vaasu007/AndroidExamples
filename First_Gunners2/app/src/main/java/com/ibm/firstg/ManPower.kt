@@ -11,11 +11,12 @@ import kotlinx.android.synthetic.main.custom_list.*
 
 class ManPower  : AppCompatActivity()  {
 
-    val description = arrayOf<String>(
+    private val description = arrayOf<String>(
       "Person1" , "Person 2 " , " Person 3 " , "Person 4"
     )
 
-    val imageId = arrayOf<Int>(
+
+    private val imageId = arrayOf<Int>(
      R.drawable.army , R.drawable.soldier ,  R.drawable.army , R.drawable.soldier
     )
     private val personList = arrayListOf<String>()
@@ -24,18 +25,27 @@ class ManPower  : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.manpower_list)
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         val myListAdapter = MyListAdapter(this,description,imageId)
         listViewv.adapter = myListAdapter
 
-        listViewv.setOnItemClickListener(){adapterView, view, position, id ->
+        listViewv.setOnItemClickListener() { adapterView, view, position, id ->
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
 
             personList.add(itemAtPos.toString())
 
-            Toast.makeText(this, "Click on item at $itemAtPos its item id $itemIdAtPos", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                "Click on item at $itemAtPos its item id $itemIdAtPos",
+                Toast.LENGTH_LONG
+            ).show()
 
-
+        }
 
 
 //            val bundle: Bundle? = intent.extras
@@ -59,4 +69,3 @@ class ManPower  : AppCompatActivity()  {
         }
     }
 
-}

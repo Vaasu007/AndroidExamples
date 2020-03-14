@@ -2,24 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/constraintLayout"
+
     android:orientation="vertical"
     tools:context="com.ibm.firstg.MainActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Button Action Example"
-
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="115dp" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:layout_marginBottom="560dp"
         android:text="Guns"
-      />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="161dp" />
 
     <Button
         android:id="@+id/button2"
@@ -27,7 +35,8 @@
         android:layout_height="wrap_content"
 
         android:text="ManPower"
-        />
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="214dp" />
 
     <Button
         android:id="@+id/button3"
@@ -35,19 +44,31 @@
         android:layout_height="wrap_content"
 
         android:text="Horse"
-         />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="309dp" />
+
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:text="Ammo"
-        />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="397dp" />
+
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:text="Display"
-        />
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 </LinearLayout>

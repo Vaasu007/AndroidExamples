@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.*
 
 class MyListAdapter(private val context: Activity, private val title: Array<String>,  private val imgid: Array<Int>)
-    : ArrayAdapter<String>(context, R.layout.custom_list, title) {
+    : ArrayAdapter<String>(context, R.layout.custom_list,title) {
 
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {
         val inflater = context.layoutInflater
@@ -18,6 +18,7 @@ class MyListAdapter(private val context: Activity, private val title: Array<Stri
 
         titleText.text = title[position]
         imageView.setImageResource(imgid[position])
+
 
 
         return rowView
